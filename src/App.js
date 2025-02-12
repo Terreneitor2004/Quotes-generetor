@@ -4,20 +4,20 @@ import { Container, Card, Button } from "react-bootstrap";
 
 const quotes = [
   {
-    text: "Wdsdsdsd.",
-    author: "wkw8jj2",
+    text: "No hay caminos para la paz; la paz es el camino",
+    author: "Mahatma Gandhi",
   },
   {
-    text: "sdsdjsuw.",
-    author: "amamsadw",
+    text: "Cada día sabemos más y entendemos menos",
+    author: "Albert Einstein",
   },
   {
-    text: "sdsds",
-    author: "weasd",
+    text: "El mundo no está en peligro por las malas personas sino por aquellas que permiten la maldad",
+    author: "Albert Einstein",
   },
   {
-    text: "If it is not right, do not do it, if it is not true, do not say it.",
-    author: "Marcus Aurelius",
+    text: "Dar el ejemplo no es la principal manera de influir sobre los demás; es la única manera.",
+    author: "Albert Einstein",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <Container className="text-center mt-5">
-      <h2 className="mb-3 text-primary">Stoic Quotes Generator</h2>
+      <h2 className="mb-3 text-primary">Quotes Generator</h2>
       <Card className="shadow-lg p-3">
         <blockquote className="blockquote">
           <p>"{quote.text}"</p>
