@@ -21,22 +21,33 @@ const quotes = [
   },
 ];
 
+const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
+
 export default function App() {
-  const [time, setTime] = useState(new Date());
+  const [quote, setQuote] = useState(getRandomQuote());
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
+      setQuote(getRandomQuote());
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <Container className="text-center mt-5">
-      <h2 className="mb-3 text-primary">Digital Clock</h2>
+      <h2 className="mb-3 text-primary">Stoic Quotes Generator</h2>
       <Card className="shadow-lg p-3">
-        <div className="display-4 text-dark">{time.toLocaleTimeString()}</div>
+        <blockquote className="blockquote">
+          <p>"{quote.text}"</p>
+          <footer className="blockquote-footer">{quote.author}</footer>
+        </blockquote>
+        <Button
+          variant="primary"
+          className="mt-3"
+          onClick={() => setQuote(getRandomQuote())}
+        >
+          New Quote
+        </Button>
       </Card>
     </Container>
   );
